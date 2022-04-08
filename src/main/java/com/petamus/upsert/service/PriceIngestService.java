@@ -99,9 +99,11 @@ public class PriceIngestService {
         l.add(price);
 
         long startMillis = System.currentTimeMillis();
+		
         for(Price p : l) {
             priceRepo.save(p);
         }
+		
         log.info("Persisted for price1 in {} sec",
                 (System.currentTimeMillis() - startMillis) / 1000);
 
